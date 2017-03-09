@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <button id="btn1" type="button" onclick="getUserInfo1()">/getUserInfo</button>
+  <button id="btn2" type="button" onclick="getUserInfo2()">/adminapi/enterprise/auth/getUserInfo</button>
+  <script>
+    function getUserInfo1() {
+      axios.get('/getUserInfo')
+        .then(function (res) {
+          console.log(res.data.name)
+        });
+    };
+
+    function getUserInfo2() {
+      axios.get('/adminapi/enterprise/auth/getUserInfo')
+        .then(function (res) {
+          console.log(res.data.name)
+        });
+    };
+  </script>
+</body>
+</html>
